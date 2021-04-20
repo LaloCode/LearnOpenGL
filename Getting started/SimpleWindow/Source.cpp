@@ -90,20 +90,23 @@ int main()
   glDeleteShader(vertexShader);
   glDeleteShader(fragmentShader);
 
-  /* vertex data for a triangle
+  // vertex data for a triangle
   float vertices[] = {
-    -0.5f, -0.5f, 0.0f,
-     0.5f, -0.5f, 0.0f,
-     0.0f,  0.5f, 0.0f
-  }; */
+    -1.0f, -0.5f, 0.0f,
+     0.0f, -0.5f, 0.0f,
+    -0.5f,  0.5f, 0.0f,
+     0.0f, -0.5f, 0.0f,
+     1.0f, -0.5f, 0.0f,
+     0.5f,  0.5f, 0.0f,
+  }; 
 
-  // vertex data for a rectangle
+  /* vertex data for a rectangle
   float vertices[] = {
      0.5f,  0.5f, 0.0f,  // top right
      0.5f, -0.5f, 0.0f,  // bottom right
     -0.5f, -0.5f, 0.0f,  // bottom left
     -0.5f,  0.5f, 0.0f   // top left 
-  };
+  };*/
   unsigned int indices[] = {  // EBO, note that we start from 0!
       0, 1, 3,   // first triangle
       1, 2, 3    // second triangle
@@ -153,7 +156,8 @@ int main()
     // draw our triangle
     glUseProgram(shaderProgram);
     glBindVertexArray(VAO);
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
     glBindVertexArray(0);
 
     // check and call events and swap the buffers
