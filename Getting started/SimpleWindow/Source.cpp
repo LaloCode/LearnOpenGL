@@ -81,6 +81,8 @@ int main()
     // Activate program
     ourShader.use();
 
+    ourShader.setFloat("offSet", 0.5f);
+
     // render the triangle
     glBindVertexArray(VAO);
     glDrawArrays(GL_TRIANGLES, 0, 3);
