@@ -79,7 +79,6 @@ int main()
   glEnableVertexAttribArray(2);
 
   // Texture loading 
-  stbi_set_flip_vertically_on_load(true);
   unsigned int textures[2];
   glGenTextures(2, textures);
   glBindTexture(GL_TEXTURE_2D, textures[0]);
